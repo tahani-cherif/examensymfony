@@ -1,0 +1,23 @@
+<table border=3>
+<tr>
+   <td>numero match</td>
+   <td>date match</td>
+   <td>nombre spectateur</td>
+   <td>nom stade</td>
+</tr>
+{% for c in match %}
+<tr>
+
+   <td>{{ c.dateM|date("m/d/Y") }}</td>
+   <td>{{c.numeroMatche }}</td>
+   <td>{{c.nbSpectateurs}}</td> 
+   <td>{{c.idstade}}</td>
+    {# <td><a href={{ path('app_delete', {'id': c.id}) }}><button>delete</button></a></td> #}
+</tr>
+  {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+{% endfor %}
+</table>
+<a href={{ path('app_add') }}><button>Add</button></a>
